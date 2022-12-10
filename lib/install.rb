@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 #!/usr/bin/ruby
 
-require 'open3'
 require 'fileutils'
 
 # Installer runner.
@@ -14,7 +13,7 @@ class InstallerRunner
 
   def self.run
     encoding_style
-    one = ARGV[0]
+    one = ARGV[1]
     FileUtils.mkdir_p(File.expand_path("~/#{one}"))
     FileUtils.cd(File.expand_path("~/#{one}"))
     system("git clone git@github.com:takkii/nyasocom_oss.git .")
