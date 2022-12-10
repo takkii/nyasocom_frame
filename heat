@@ -6,4 +6,40 @@
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-require 'install'
+# Heat module
+module Heart
+  module_function
+
+  def version
+    require 'frame/version'
+    print Frame::VERSION
+    puts ' : [nyasocom_framework_version] '
+  end
+
+  def installer
+    require 'install'
+  end
+
+  def default
+    puts "nyasocom_frame is Copyright © 2022 Takayuki, Kamiyama."
+  end
+end
+
+v = /\A[-][v]\z/
+s = /\A[-][s]\z/
+
+one = ARGV[0]
+
+include Heart
+
+if one.nil?
+  default 
+elsif one.match?(v)
+  version
+elsif one.match?(s)
+  installer
+else
+  puts 'Please choose an option.'
+end
+
+__END__
