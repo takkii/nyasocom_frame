@@ -18,7 +18,7 @@ module Heart
   end
 
   def default
-    puts "nyasocom_frame is Copyright © 2022 Takayuki, Kamiyama."
+    puts "nyasocom_frame is Copyright © 2022 Takayuki Kamiyama."
   end
 
   def document
@@ -36,15 +36,13 @@ heat new example
 
 # ヘルプ、ドキュメント
 heat -h
-
 EOS
-
   end
 end
 
-v = /\A[-][v]\z/
 h = /\A[-][h]\z/
 n = /\Anew\z/
+v = /\A[-][v]\z/
 
 one = ARGV[0]
 
@@ -61,5 +59,7 @@ elsif one.match?(v)
 else
   puts '該当のオプションがありません、ドキュメントを参照してください。'
 end
+
+GC.compact
 
 __END__
