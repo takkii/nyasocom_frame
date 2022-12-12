@@ -22,3 +22,7 @@ class InstallerRunner
 end
 
 InstallerRunner.run
+
+GC.compact
+
+__END__
