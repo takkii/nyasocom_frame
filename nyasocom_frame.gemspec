@@ -22,9 +22,6 @@ Gem::Specification.new do |s|
   s.summary = "にゃそこん初号機の構成ファイルを指定のフォルダに自動で生成します。"
   s.description = "シンプルなにゃそこんフレームです。RSSアンテナの原型は出来ています。"
 
-  # 依存ライブラリ
-  # s.add_runtime_dependency('himekuri', '~> 0.1')
-
   if s.respond_to? :specification_version then
     s.specification_version = 4
   end
