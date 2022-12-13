@@ -1,0 +1,20 @@
+{
+    // IntelliSense を使用して利用可能な属性を学べます。
+    // 既存の属性の説明をホバーして表示します。
+    // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug nyasocom_frame frame.rb",
+            "type": "Ruby",
+            "request": "launch",
+            "program": "${workspaceRoot}/lib/frame.rb"
+        },
+        //         {
+        //     "name": "Debug nyasocom_frame install.rb",
+        //     "type": "Ruby",
+        //     "request": "launch",
+        //     "program": "${workspaceRoot}/lib/install.rb"
+        // },
+    ]
+}
