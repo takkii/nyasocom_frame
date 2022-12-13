@@ -2,5 +2,9 @@
 
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in zinbei.gemspec
+# debug
 gem 'ruby-debug-ide'
+
+# minitest
+gem 'minitest-reporters'
+gem 'minitest-runners'
