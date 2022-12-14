@@ -4,13 +4,20 @@
     // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        // デバッグしたい場所をコメントアウト
+        // {
+        //     "name": "Debug nyasocom_frame frame.rb",
+        //     "type": "Ruby",
+        //     "request": "launch",
+        //     "program": "${workspaceRoot}/lib/frame.rb"
+        // },
         {
-            "name": "Debug nyasocom_frame frame.rb",
+            "name": "Debug nyasocom_frame mini_test_runner.rb",
             "type": "Ruby",
             "request": "launch",
-            "program": "${workspaceRoot}/lib/frame.rb"
+            "program": "${workspaceRoot}/mini_test_runner.rb"
         },
-        //         {
+        // {
         //     "name": "Debug nyasocom_frame install.rb",
         //     "type": "Ruby",
         //     "request": "launch",
