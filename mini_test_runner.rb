@@ -18,7 +18,7 @@ end
 
 # begin
 #   Auto_Runner.ruby
-#   Auto_Runner(true, "#{Dir.home}/GitHub/nyasocom_frame/mini_test")
+#   Auto_Runner(true, "/GitHub/nyasocom_frame/mini_test")
 # rescue StandardError => e
 #   puts e.backtrace
 # ensure
@@ -27,7 +27,7 @@ end
 
 begin
   Mini_Runner.ruby
-  Mini_Runner(true, "#{Dir.home}/GitHub/nyasocom_frame/mini_test")
+  Mini_Runner(true, "/GitHub/nyasocom_frame/mini_test")
 rescue StandardError => e
   puts e.backtrace
 ensure
