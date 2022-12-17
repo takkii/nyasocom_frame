@@ -9,7 +9,7 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
-    minitest-runners (1.1.1)
+    minitest-runners (1.1.5)
     rake (13.0.6)
     ruby-debug-ide (0.7.3)
       rake (>= 0.8.1)
