@@ -1,3 +1,5 @@
+[![Ruby](https://github.com/takkii/nyasocom_frame/actions/workflows/ruby.yml/badge.svg?branch=main)](https://github.com/takkii/nyasocom_frame/actions/workflows/ruby.yml)
+
 ### にゃそこんフレーム
 
 ```markdown
