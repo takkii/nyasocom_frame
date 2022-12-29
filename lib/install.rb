@@ -16,7 +16,10 @@ class InstallerRunner
     one = ARGV[1]
     FileUtils.mkdir_p(File.expand_path("~/#{one}"))
     FileUtils.cd(File.expand_path("~/#{one}"))
-    system("git clone git@github.com:takkii/nyasocom_oss.git .")
+    if system('git clone git@github.com:takkii/nyasocom_oss.git .', exception: true)
+    else
+      system('git clone https://github.com:takkii/nyasocom_oss.git .')
+    end
     FileUtils.rm_rf(File.expand_path("~/#{one}/.git"))
   end
 end
