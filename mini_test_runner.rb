@@ -1,35 +1,33 @@
 # frozen_string_literal: true
 
-lib = File.expand_path('lib', __dir__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require "#{File.dirname(__FILE__)}/req/mini-test"
 
-# Mini Test Runner
-# class Auto_Runner
-#   def self.ruby
-#     require 'auto_runner'
-#   end
-# end
+# Encoding Settings
+def encoding_style
+  Encoding.default_internal = 'UTF-8'
+  Encoding.default_external = 'UTF-8'
+end
 
-class Mini_Runner
-  def self.ruby
-    require 'mini_auto_runner'
+# Ruby file find
+class MiniTestFile
+  attr_reader :mini_test
+
+  def initialize
+    encoding_style
+    require 'minitest/mini_auto_runner'
+    @mini_test = Mini_Runner(true, '/GitHub/nyasocom_frame/mini_test')
+  end
+
+  def remove
+    remove_instance_variable(:@mini_test)
   end
 end
 
-# begin
-#   Auto_Runner.ruby
-#   Auto_Runner(true, "/GitHub/nyasocom_frame/mini_test")
-# rescue StandardError => e
-#   puts e.backtrace
-# ensure
-#   GC.compact
-# end
-
 begin
-  Mini_Runner.ruby
-  Mini_Runner(true, "/GitHub/nyasocom_frame/mini_test")
-rescue StandardError => e
+  MiniTestFile.new.remove
+rescue LoadError => e
   puts e.backtrace
+  encoding_style.tanraku_exit
 ensure
   GC.compact
 end

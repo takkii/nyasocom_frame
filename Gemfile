@@ -7,4 +7,8 @@ gem 'ruby-debug-ide'
 
 # minitest
 gem 'minitest-reporters'
-gem 'minitest-runners'
+
+# GitHub Package.
+# source "https://rubygems.pkg.github.com/takkii" do
+#   gem "minitest-runners", "1.1.6"
+# end
