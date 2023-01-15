@@ -1,12 +1,6 @@
 # frozen_string_literal: true
 
-# -------------------------------------
-require 'minitest'
-require 'minitest/autorun'
-require 'minitest/unit'
-require 'minitest/reporters'
-require 'tanraku'
-# -------------------------------------
+require "#{File.dirname(__FILE__)}/req/mini-test"
 
 # Encoding Settings
 def encoding_style
