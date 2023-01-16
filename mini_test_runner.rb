@@ -13,8 +13,6 @@ class MiniTestFile
   attr_reader :mini_test
 
   def initialize
-    encoding_style
-    require 'minitest/mini_auto_runner'
     @mini_test = Mini_Runner(true, '/GitHub/nyasocom_frame/mini_test')
   end
 
