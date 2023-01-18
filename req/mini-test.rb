@@ -5,6 +5,6 @@ require 'minitest'
 require 'minitest/autorun'
 require 'minitest/unit'
 require 'minitest/reporters'
-require 'minitest/mini_auto_runner'
+require 'minitest/mini_runner'
 require 'tanraku'
 # -------------------------------------
