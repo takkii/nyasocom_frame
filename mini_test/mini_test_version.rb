@@ -2,10 +2,7 @@
 
 require 'minitest/autorun'
 require 'minitest/reporters'
-require 'frame/version'
-
-lib = File.expand_path('lib', __dir__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require "#{File.dirname(__FILE__)}/../lib/frame/version"
 
 # Mini_test file load.
 class TestVersion < Minitest::Test
