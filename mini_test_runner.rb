@@ -13,7 +13,7 @@ class MiniTestFile
   attr_reader :mini_test
 
   def initialize
-    @mini_test = Mini_Runner(true, '/GitHub/nyasocom_frame/mini_test')
+    @mini_test = Mini(true, '/GitHub/nyasocom_frame/mini_test')
   end
 
   def remove
