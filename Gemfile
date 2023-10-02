@@ -3,10 +3,12 @@
 source 'https://rubygems.org'
 
 # debug
-gem 'ruby-debug-ide'
+# gem 'ruby-debug-ide'
 
-# minitest
-gem 'minitest-reporters'
+# rake run
+gem 'bundler'
+gem 'rake'
+gem 'minitest'
 
 # GitHub Package.
 # source "https://rubygems.pkg.github.com/takkii" do

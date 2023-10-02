@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'minitest/autorun'
-require 'minitest/reporters'
+
 require "#{File.dirname(__FILE__)}/../lib/frame/version"
 
 # Mini_test file load.
