@@ -21,6 +21,7 @@ class InstallerRunner
       system('git clone https://github.com:takkii/nyasocom_oss.git .')
     end
     FileUtils.rm_rf("./#{one}/.git")
+    FileUtils.rm_rf("./#{one}/.github")
   end
 end
 
