@@ -14,14 +14,14 @@ class InstallerRunner
   def self.run
     encoding_style
     one = ARGV[1]
-    FileUtils.mkdir_p(Dir.chdir("/#{one}"))
-    FileUtils.cd(Dir.chdir("/#{one}"))
+    FileUtils.mkdir_p("./#{one}")
+    FileUtils.cd("./#{one}")
     if system('git clone git@github.com:takkii/nyasocom_oss.git .', exception: true)
     else
       system('git clone https://github.com:takkii/nyasocom_oss.git .')
     end
-    FileUtils.rm_rf(Dir.chdir("/#{one}/.git"))
-    FileUtils.rm_rf(Dir.chdir("/#{one}/.github"))
+    FileUtils.rm_rf("./.git")
+    FileUtils.rm_rf("./.github")
   end
 end
 
