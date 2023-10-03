@@ -32,7 +32,6 @@ heat -v
 # ひな形自動生成
 heat new [フォルダ名]
 heat new example
-※ ~/ 先に指定のフォルダ名で展開されます。
 
 # ヘルプ、ドキュメント
 heat -h
