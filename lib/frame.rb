@@ -20,16 +20,7 @@ module Heart
   end
 
   def nyasocom
-    begin
-      system("git clone git@github.com:takkii/nyasocom_oss.git")
-      FileUtils.cd("./nyasocom_oss")
-      FileUtils.rm_rf("./.git")
-      FileUtils.rm_rf("./.github")
-    rescue LoadError => e
-      puts e.backtrace
-    ensure
-      GC.compact
-    end
+    require 'nyasocom'
   end
 
   def default
