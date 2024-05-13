@@ -18,8 +18,8 @@ Gem::Specification.new do |s|
   s.metadata = { "github_repo" => "ssh://github.com/takkii/nyasocom_frame" }
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  spec.required_ruby_version = ['>= 3.0']
-  spec.rubygems_version = ['>= 3.5']
+  s.required_ruby_version = ['>= 3.0']
+  s.rubygems_version = ['>= 3.5']
   s.summary = "にゃそこん初号機の構成ファイルを指定のフォルダに自動で生成します。"
   s.description = "シンプルなにゃそこんフレームです。RSSアンテナの原型は出来ています。"
 
