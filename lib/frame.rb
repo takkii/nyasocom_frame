@@ -19,8 +19,8 @@ module Heart
     require 'install'
   end
 
-  def nyasocom
-    require 'nyasocom'
+  def download
+    require 'download'
   end
 
   def default
@@ -62,7 +62,7 @@ if one.nil?
 elsif one.match?(h)
   document
 elsif one.match?(i)
-  nyasocom
+  download
 elsif one.match?(n)
   installer
 elsif one.match?(v)
