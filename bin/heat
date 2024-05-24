@@ -6,8 +6,12 @@
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-require 'frame'
-
-GC.compact
+begin
+  require 'frame'
+rescue StandardError => e
+  puts e.backtrace
+ensure
+  GC.compact
+end
 
 __END__
