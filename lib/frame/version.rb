@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Frame
-  VERSION = '1.0.6'.freeze
+  VERSION = '1.0.7-2024.5.24'.freeze
 end
 
 GC.compact
