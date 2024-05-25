@@ -34,12 +34,13 @@ EOF
   end
 
   def default
-    puts 'nyasocom_frame is Copyright © 2022-2023 Takayuki Kamiyama.'
+    str = 'nyasocom_frame is a framework for generating web applications. '
+    puts str
   end
 
   def document
     puts text = <<-EOS
-# license information
+# Nyasocom Framework information
 heat
 
 # Version notation
