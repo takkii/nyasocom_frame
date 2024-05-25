@@ -17,32 +17,34 @@ module Heart
 
   def installer
     require 'install'
+    puts 'Used nyasocom_frame to clone nyasocom_oss with any project name.'
   end
 
   def download
     require 'download'
+    puts 'Cloned nyasocom_oss with nyasocom_frame.'
   end
 
   def default
-    puts "nyasocom_frame is Copyright © 2022-2023 Takayuki Kamiyama."
+    puts 'nyasocom_frame is Copyright © 2022-2023 Takayuki Kamiyama.'
   end
 
   def document
     puts text = <<-EOS
-# ライセンス情報
+# license information
 heat
 
-# バージョン表記
+# Version notation
 heat -v
 
-# nyasocom生成
+# Nyasocom generated
 heat init
 
-# ひな形自動生成
-heat new [フォルダ名]
+# Template generation
+heat new [Folder_Name]
 heat new example
 
-# ヘルプ、ドキュメント
+# HELP
 heat -h
 EOS
   end
@@ -68,7 +70,7 @@ elsif one.match?(n)
 elsif one.match?(v)
   version
 else
-  puts '該当のオプションがありません、ドキュメントを参照してください。'
+  puts 'No such option is found, please refer to the documentation.'
 end
 
 GC.compact
