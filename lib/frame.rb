@@ -17,12 +17,20 @@ module Heart
 
   def installer
     require 'install'
-    puts 'Used nyasocom_frame to clone nyasocom_oss with any project name.'
+    puts <<-EOF
+
+Used nyasocom_frame to clone nyasocom_oss with any project name.
+
+EOF
   end
 
   def download
     require 'download'
-    puts 'Cloned nyasocom_oss with nyasocom_frame.'
+    puts <<-EOF
+
+Cloned nyasocom_oss with nyasocom_frame.
+
+EOF
   end
 
   def default
