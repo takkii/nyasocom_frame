@@ -20,8 +20,8 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.required_ruby_version = ['>= 3.0']
   s.rubygems_version = ['>= 3.5']
-  s.summary = "にゃそこん初号機の構成ファイルを指定のフォルダに自動で生成します。"
-  s.description = "シンプルなにゃそこんフレームです。RSSアンテナの原型は出来ています。"
+  s.summary = "Copy the open source version of nyasocom_oss."
+  s.description = "Web framework, starts as an RSS antenna in its initial configuration."
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
