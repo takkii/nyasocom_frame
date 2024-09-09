@@ -35,11 +35,6 @@ EOF
   
   def postgresql
     require 'postgres'
-    puts <<-EOF
-
-Cloned nyasocom_pg with nyasocom_frame.
-
-EOF
   end
 
   def default
