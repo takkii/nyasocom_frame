@@ -2,7 +2,7 @@
 
 module Frame
   # latest version = 1.x.x-date.today
-  VERSION = '1.0.8-2024.5.26'.freeze
+  VERSION = '1.0.9-2024.09.09'.freeze
 end
 
 GC.compact
