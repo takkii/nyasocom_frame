@@ -11,7 +11,7 @@ class InstallerRunner
     Encoding.default_external = 'UTF-8'
   end
   
-  def command
+  def self.command
     if system('git clone git@github.com:takkii/nyasocom_pg.git', exception: true)
     else
       system('git clone https://github.com:takkii/nyasocom_pg.git')
