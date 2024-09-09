@@ -19,6 +19,11 @@ class InstallerRunner
     FileUtils.cd("./nyasocom_pg")
     FileUtils.rm_rf("./.git")
     FileUtils.rm_rf("./.github")
+    puts <<-EOF
+
+Cloned nyasocom_pg with nyasocom_frame.
+
+EOF
   end
 
   def self.run
