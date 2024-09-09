@@ -32,6 +32,15 @@ Cloned nyasocom_oss with nyasocom_frame.
 
 EOF
   end
+  
+  def postgresql
+    require 'postgres'
+    puts <<-EOF
+
+Cloned nyasocom_pg with nyasocom_frame.
+
+EOF
+  end
 
   def default
     str = 'nyasocom_frame is a framework for generating web applications. '
@@ -46,12 +55,16 @@ heat
 # Version notation
 heat -v
 
-# Nyasocom generated
+# nyasocom_oss generated
 heat init
 
 # Template generation
 heat new [Folder_Name]
 heat new example
+
+# nyasocom_pg generated
+heat db postgresql
+heat db --pg
 
 # HELP
 heat -h
@@ -59,6 +72,7 @@ EOS
   end
 end
 
+d = /\Adb\z/
 h = /\A[-][h]\z/
 i = /\Ainit\z/
 n = /\Anew\z/
@@ -78,6 +92,8 @@ elsif one.match?(n)
   installer
 elsif one.match?(v)
   version
+elsif one.match?(d)
+  postgresql
 else
   puts 'No such option is found, please refer to the documentation.'
 end
