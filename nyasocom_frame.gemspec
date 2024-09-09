@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.required_ruby_version = ['>= 3.0']
-  s.rubygems_version = ['>= 3.5']
+  s.rubygems_version = '3.5.18'
   s.summary = "Copy the open source version of nyasocom_oss."
   s.description = "Web framework, starts as an RSS antenna in its initial configuration."
 
