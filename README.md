@@ -5,6 +5,6 @@
 
 > にゃそこんのオープンソース版が対象
 
-- 枠組みとしてnyasocom_ossを複製します。
+- 枠組み、nyasocom_oss/nyasocom_pg等をフォルダに展開します。
 
 取り扱い説明書は[こちら](https://github.com/takkii/nyasocom_frame/wiki/manual)。
