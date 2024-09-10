@@ -33,8 +33,8 @@ Cloned nyasocom_oss with nyasocom_frame.
 EOF
   end
   
-  def postgresql
-    require 'postgres'
+  def databases
+    require 'database'
   end
 
   def default
@@ -88,7 +88,7 @@ elsif one.match?(n)
 elsif one.match?(v)
   version
 elsif one.match?(d)
-  postgresql
+  databases
 else
   puts 'No such option is found, please refer to the documentation.'
 end
