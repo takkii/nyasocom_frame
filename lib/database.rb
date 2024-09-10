@@ -11,7 +11,7 @@ class InstallerRunner
     Encoding.default_external = 'UTF-8'
   end
   
-  def self.command
+  def self.postgresql
     if system('git clone git@github.com:takkii/nyasocom_pg.git', exception: true)
     else
       system('git clone https://github.com:takkii/nyasocom_pg.git')
@@ -44,9 +44,9 @@ heat db --pg
 
 EOF
     elsif two.match?(pt)
-      command
+      postgresql
     elsif two.match?(pg)
-      command
+      postgresql
     else
       puts 'No such option is found, please refer to the documentation.'
     end
