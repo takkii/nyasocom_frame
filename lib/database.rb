@@ -5,27 +5,6 @@ require 'fileutils'
 
 # Installer runner.
 class InstallerRunner
-  # default encoding utf-8, change encode here.
-  def self.encoding_style
-    Encoding.default_internal = 'UTF-8'
-    Encoding.default_external = 'UTF-8'
-  end
-  
-  def self.postgresql
-    if system('git clone git@github.com:takkii/nyasocom_pg.git', exception: true)
-    else
-      system('git clone https://github.com:takkii/nyasocom_pg.git')
-    end
-    FileUtils.cd("./nyasocom_pg")
-    FileUtils.rm_rf("./.git")
-    FileUtils.rm_rf("./.github")
-    puts <<-EOF
-
-Cloned nyasocom_pg with nyasocom_frame.
-
-EOF
-  end
-
   def self.run
     encoding_style
     two = ARGV[1]
@@ -50,6 +29,27 @@ EOF
     else
       puts 'No such option is found, please refer to the documentation.'
     end
+  end
+  
+  private
+  def self.encoding_style
+    Encoding.default_internal = 'UTF-8'
+    Encoding.default_external = 'UTF-8'
+  end
+  
+  def self.postgresql
+    if system('git clone git@github.com:takkii/nyasocom_pg.git', exception: true)
+    else
+      system('git clone https://github.com:takkii/nyasocom_pg.git')
+    end
+    FileUtils.cd("./nyasocom_pg")
+    FileUtils.rm_rf("./.git")
+    FileUtils.rm_rf("./.github")
+    puts <<-EOF
+
+Cloned nyasocom_pg with nyasocom_frame.
+
+EOF
   end
 end
 

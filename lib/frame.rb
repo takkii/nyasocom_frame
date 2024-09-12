@@ -17,20 +17,10 @@ module Heart
 
   def installer
     require 'install'
-    puts <<-EOF
-
-Used nyasocom_frame to clone nyasocom_oss with any project name.
-
-EOF
   end
 
-  def download
+  def downloader
     require 'download'
-    puts <<-EOF
-
-Cloned nyasocom_oss with nyasocom_frame.
-
-EOF
   end
   
   def databases
@@ -42,7 +32,7 @@ EOF
     puts str
   end
 
-  def document
+  def documents
     puts text = <<-EOS
 # Nyasocom Framework information
 heat
@@ -80,9 +70,9 @@ include Heart
 if one.nil?
   default
 elsif one.match?(h)
-  document
+  documents
 elsif one.match?(i)
-  download
+  downloader
 elsif one.match?(n)
   installer
 elsif one.match?(v)

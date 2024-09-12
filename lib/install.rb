@@ -5,14 +5,19 @@ require 'fileutils'
 
 # Installer runner.
 class InstallerRunner
-  # default encoding utf-8, change encode here.
+
+  def self.run
+    encoding_style
+    nyasocom_custom_name
+  end
+  
+  private
   def self.encoding_style
     Encoding.default_internal = 'UTF-8'
     Encoding.default_external = 'UTF-8'
   end
-
-  def self.run
-    encoding_style
+  
+  def self.nyasocom_custom_name
     one = ARGV[1]
     FileUtils.mkdir_p("./#{one}")
     FileUtils.cd("./#{one}")
@@ -22,6 +27,11 @@ class InstallerRunner
     end
     FileUtils.rm_rf("./.git")
     FileUtils.rm_rf("./.github")
+        puts <<-EOF
+
+Used nyasocom_frame to clone nyasocom_oss with any project name.
+
+EOF
   end
 end
 
