@@ -17,14 +17,35 @@ module Heart
 
   def installer
     require 'install'
+    begin
+      InstallerRunner.install
+    rescue LoadError => e
+      puts e.backtrace
+    ensure
+      GC.compact
+    end
   end
 
   def downloader
-    require 'download'
+    require 'install'
+    begin
+      InstallerRunner.download
+    rescue LoadError => e
+      puts e.backtrace
+    ensure
+      GC.compact
+    end
   end
-  
+
   def databases
-    require 'database'
+    require 'install'
+    begin
+      InstallerRunner.database
+    rescue LoadError => e
+      puts e.backtrace
+    ensure
+      GC.compact
+    end
   end
 
   def default
