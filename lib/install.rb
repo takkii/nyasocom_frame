@@ -16,6 +16,16 @@ class InstallerRunner
     nyasocom_command
   end
 
+  def self.nyasocom2_download
+    encoding_style
+    nyasocom2_command
+  end
+
+  def self.nyasocom3_download
+    encoding_style
+    nyasocom3_command
+  end
+
   def self.database
     encoding_style
     two = ARGV[1]
@@ -91,6 +101,36 @@ EOF
     puts <<-EOF
 
 Cloned nyasocom_pg with nyasocom_frame.
+
+EOF
+end
+
+  def self.nyasocom2_command
+    if system('git clone git@github.com:takkii/nyasocom2.git', exception: true)
+    else
+      system('git clone https://github.com:takkii/nyasocom2.git')
+    end
+    FileUtils.cd("./nyasocom2")
+    FileUtils.rm_rf("./.git")
+    FileUtils.rm_rf("./.github")
+    puts <<-EOF
+
+Cloned nyasocom2 with nyasocom_frame.
+
+EOF
+  end
+
+  def self.nyasocom3_command
+    if system('git clone git@github.com:takkii/nyasocom_sun_pg_win.git', exception: true)
+    else
+      system('git clone https://github.com:takkii/nyasocom_sun_pg_win.git')
+    end
+    FileUtils.cd("./nyasocom_sun_pg_win")
+    FileUtils.rm_rf("./.git")
+    FileUtils.rm_rf("./.github")
+    puts <<-EOF
+
+Cloned nyasocom_sun_pg_win with nyasocom_frame.
 
 EOF
   end
