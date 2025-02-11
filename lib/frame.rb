@@ -35,6 +35,28 @@ module Heart
     ensure
       GC.compact
     end
+end
+
+  def nyasocom2_downloader
+    require 'install'
+    begin
+      InstallerRunner.nyasocom2_download
+    rescue LoadError => e
+      puts e.backtrace
+    ensure
+      GC.compact
+    end
+end
+
+  def nyasocom3_downloader
+    require 'install'
+    begin
+      InstallerRunner.nyasocom3_download
+    rescue LoadError => e
+      puts e.backtrace
+    ensure
+      GC.compact
+    end
   end
 
   def databases
@@ -64,6 +86,12 @@ heat -v
 # nyasocom_oss generated
 heat init
 
+# nyasocom2 generated
+heat two
+
+# nyasocom_sun_pg_win generated
+heat sun
+
 # Template generation
 heat new [Folder_Name]
 heat new example
@@ -82,6 +110,8 @@ d = /\Adb\z/
 h = /\A[-][h]\z/
 i = /\Ainit\z/
 n = /\Anew\z/
+s = /\Asun\z/
+t = /\Atwo\z/
 v = /\A[-][v]\z/
 
 one = ARGV[0]
@@ -96,6 +126,10 @@ elsif one.match?(i)
   downloader
 elsif one.match?(n)
   installer
+elsif one.match?(s)
+  nyasocom3_downloader
+elsif one.match?(t)
+  nyasocom2_downloader
 elsif one.match?(v)
   version
 elsif one.match?(d)
