@@ -8,8 +8,8 @@ module Frame
   frame_version = '1.2.0'
   t = Date.today
   build_day = t.strftime('%Y.%m.%d')
-  #VERSION = "#{frame_version}-#{build_day}".freeze
-  VERSION = "#{frame_version}"
+  VERSION = "#{frame_version}-#{build_day}".freeze
+  #VERSION = "#{frame_version}"
 end
 rescue StandardError => e
   puts e.backtrace
