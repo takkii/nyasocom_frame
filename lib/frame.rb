@@ -35,7 +35,7 @@ module Heart
     ensure
       GC.compact
     end
-end
+  end
 
   def nyasocom2_downloader
     require 'install'
@@ -46,12 +46,23 @@ end
     ensure
       GC.compact
     end
-end
+  end
 
   def nyasocom3_downloader
     require 'install'
     begin
       InstallerRunner.nyasocom3_download
+    rescue LoadError => e
+      puts e.backtrace
+    ensure
+      GC.compact
+    end
+  end
+
+  def nyasocom_app_downloader
+    require 'install'
+    begin
+      InstallerRunner.nyasocom_app_download
     rescue LoadError => e
       puts e.backtrace
     ensure
@@ -92,6 +103,9 @@ heat two
 # nyasocom_sun_pg_win generated
 heat sun
 
+# nyasocom_sun_app generated
+heat app
+
 # Template generation
 heat new [Folder_Name]
 heat new example
@@ -106,6 +120,7 @@ EOS
   end
 end
 
+a = /\Aapp\z/
 d = /\Adb\z/
 h = /\A[-][h]\z/
 i = /\Ainit\z/
@@ -120,6 +135,8 @@ include Heart
 
 if one.nil?
   default
+elsif one.match?(a)
+  nyasocom_app_downloader
 elsif one.match?(h)
   documents
 elsif one.match?(i)
