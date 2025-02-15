@@ -25,6 +25,17 @@ module Heart
       GC.compact
     end
   end
+  
+  def creater
+    require 'install'
+    begin
+      InstallerRunner.create
+    rescue LoadError => e
+      puts e.backtrace
+    ensure
+      GC.compact
+    end
+  end
 
   def downloader
     require 'install'
@@ -88,29 +99,33 @@ module Heart
 
   def documents
     puts text = <<-EOS
-# Nyasocom Framework information
+# nyasocom Framework information
 heat
 
-# Version notation
+# version notation
 heat -v
 
-# nyasocom_oss generated
+# nyasocom_oss project template generated
 heat init
 
-# nyasocom2 generated
+# nyasocom2 project template generated
 heat two
 
-# nyasocom_sun_pg_win generated
+# nyasocom_sun_pg_win project template generated
 heat sun
 
-# nyasocom_sun_app generated
+# nyasocom_sun_app project template generated
 heat app
 
-# Template generation
+# template generation for nyasocom_oss
 heat new [Folder_Name]
 heat new example
 
-# nyasocom_pg generated
+# template generation for nyasocom_sun_pg_win
+heat create [Folder_Name]
+heat create example
+
+# nyasocom_pg project template generated
 heat db postgresql
 heat db --pg
 
@@ -121,6 +136,7 @@ EOS
 end
 
 a = /\Aapp\z/
+c = /\Acreate\z/
 d = /\Adb\z/
 h = /\A[-][h]\z/
 i = /\Ainit\z/
@@ -137,6 +153,8 @@ if one.nil?
   default
 elsif one.match?(a)
   nyasocom_app_downloader
+elsif one.match?(c)
+  creater
 elsif one.match?(h)
   documents
 elsif one.match?(i)
