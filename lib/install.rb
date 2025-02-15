@@ -16,6 +16,11 @@ class InstallerRunner
     nyasocom_sun_custom_name
   end
 
+  def self.cook
+    encoding_style
+    nyasocom2_custom_name
+  end
+
   def self.download
     encoding_style
     nyasocom_command
@@ -82,6 +87,23 @@ EOF
         puts <<-EOF
 
 Used nyasocom_frame to clone nyasocom_oss with any project name.
+
+EOF
+  end
+  
+  def self.nyasocom2_custom_name
+    two = ARGV[1]
+    FileUtils.mkdir_p("./#{two}")
+    FileUtils.cd("./#{two}")
+    if system('git clone git@github.com:takkii/nyasocom2.git .', exception: true)
+    else
+      system('git clone https://github.com:takkii/nyasocom2.git .')
+    end
+    FileUtils.rm_rf("./.git")
+    FileUtils.rm_rf("./.github")
+        puts <<-EOF
+
+Used nyasocom_frame to clone nyasocom2 with any project name.
 
 EOF
   end

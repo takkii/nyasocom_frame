@@ -37,6 +37,17 @@ module Heart
     end
   end
 
+  def cooker
+    require 'install'
+    begin
+      InstallerRunner.cook
+    rescue LoadError => e
+      puts e.backtrace
+    ensure
+      GC.compact
+    end
+  end
+
   def downloader
     require 'install'
     begin
@@ -121,6 +132,10 @@ heat app
 heat new [Folder_Name]
 heat new example
 
+# template generation for nyasocom2
+heat cook [Folder_Name]
+heat cook example
+
 # template generation for nyasocom_sun_pg_win
 heat create [Folder_Name]
 heat create example
@@ -140,6 +155,7 @@ c = /\Acreate\z/
 d = /\Adb\z/
 h = /\A[-][h]\z/
 i = /\Ainit\z/
+k = /\Acook\z/
 n = /\Anew\z/
 s = /\Asun\z/
 t = /\Atwo\z/
@@ -159,6 +175,8 @@ elsif one.match?(h)
   documents
 elsif one.match?(i)
   downloader
+elsif one.match?(k)
+  cooker
 elsif one.match?(n)
   installer
 elsif one.match?(s)
