@@ -10,6 +10,11 @@ class InstallerRunner
     encoding_style
     nyasocom_custom_name
   end
+  
+  def self.create
+    encoding_style
+    nyasocom_sun_custom_name
+  end
 
   def self.download
     encoding_style
@@ -58,6 +63,7 @@ EOF
   end
 
   private
+
   def self.encoding_style
     Encoding.default_internal = 'UTF-8'
     Encoding.default_external = 'UTF-8'
@@ -76,6 +82,23 @@ EOF
         puts <<-EOF
 
 Used nyasocom_frame to clone nyasocom_oss with any project name.
+
+EOF
+  end
+
+  def self.nyasocom_sun_custom_name
+    sun = ARGV[1]
+    FileUtils.mkdir_p("./#{sun}")
+    FileUtils.cd("./#{sun}")
+    if system('git clone git@github.com:takkii/nyasocom_sun_pg_win.git .', exception: true)
+    else
+      system('git clone https://github.com:takkii/nyasocom_sun_pg_win.git .')
+    end
+    FileUtils.rm_rf("./.git")
+    FileUtils.rm_rf("./.github")
+        puts <<-EOF
+
+Used nyasocom_frame to clone nyasocom_sun_pg_win with any project name.
 
 EOF
   end
