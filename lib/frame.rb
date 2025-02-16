@@ -117,10 +117,10 @@ heat
 heat -v
 
 # nyasocom_oss project template generated
-heat init
+heat ichi
 
 # nyasocom2 project template generated
-heat two
+heat ni
 
 # nyasocom_sun_pg_win project template generated
 heat sun
@@ -154,11 +154,11 @@ a = /\Aapp\z/
 c = /\Acreate\z/
 d = /\Adb\z/
 h = /\A[-][h]\z/
-i = /\Ainit\z/
+i = /\Aichi\z/
 k = /\Acook\z/
 n = /\Anew\z/
 s = /\Asun\z/
-t = /\Atwo\z/
+t = /\Ani\z/
 v = /\A[-][v]\z/
 
 one = ARGV[0]
