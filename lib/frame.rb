@@ -110,7 +110,7 @@ module Heart
 
   def documents
     puts text = <<-EOS
-# nyasocom Framework information
+# nyasocom framework information
 heat
 
 # version notation
